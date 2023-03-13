@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { concatMap, forkJoin, from, map, of, tap } from 'rxjs';
-import { ConcatMapService } from '../dataAccess/concat-map.service';
+import { concatMap, forkJoin, map } from 'rxjs';
+import { ConcatMapService } from '../data-access/concat-map.service';
 interface User {
   id: number;
   name: string;
@@ -36,12 +36,12 @@ export class ConcatMapComponent {
   ngOnInit(): void {
   }
 
-  public trackByUser(i: number, _item: User): number {
-    return _item.id;
+  public trackByUser(i: number, item: User): number {
+    return item.id;
   }
 
-  public trackByPost(i: number, _item: Post): number {
-    return _item.id;
+  public trackByPost(i: number, item: Post): number {
+    return item.id;
   }
 
 }

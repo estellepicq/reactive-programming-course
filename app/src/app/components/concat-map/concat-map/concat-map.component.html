@@ -1,7 +1,7 @@
 <h1>Concat Map</h1>
 <h2>Users posts</h2>
 
-<div class="movies-container" *ngIf="threeFirstUsersWithPosts$ | async as users; else loading">
+<ng-container *ngIf="threeFirstUsersWithPosts$ | async as users; else loading">
     <ng-container *ngIf="users.length">
         <p-card *ngFor="let user of users; let i=index; trackBy: trackByUser" [header]="user.name">
             <ul>
@@ -11,7 +11,7 @@
             </ul>
         </p-card>
     </ng-container>
-</div>
+</ng-container>
 
 
 <ng-template #loading>
