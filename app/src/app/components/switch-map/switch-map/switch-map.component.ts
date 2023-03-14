@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, Observable, of, startWith, switchMap } from 'rxjs';
-import { SwitchMapService } from '../dataAccess/switch-map.service';
+import { SwitchMapService } from '../data-access/switch-map.service';
 
 @Component({
   selector: 'app-switch-map',
@@ -24,7 +24,7 @@ export class SwitchMapComponent {
 
   ngOnInit(): void { }
 
-  public trackByMovie(i: number, _item: string): number {
+  public trackByMovie(i: number, item: string): number {
     return i;
   }
 
