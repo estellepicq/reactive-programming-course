@@ -21,6 +21,7 @@ import { StepsModule } from 'primeng/steps';
 import { CardModule } from 'primeng/card';
 import { SkeletonModule } from 'primeng/skeleton';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import {VirtualScrollerModule} from 'primeng/virtualscroller';
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     StepsModule,
     CardModule,
     SkeletonModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    VirtualScrollerModule
   ],
   exports: [
     TableModule,
@@ -68,7 +70,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     StepsModule,
     CardModule,
     SkeletonModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    VirtualScrollerModule
   ],
   providers: [
     DialogService

@@ -1,0 +1,23 @@
+<div class="example-container">
+    <h2>Gotta catch em all</h2>
+
+    <h3>Currently {{ pokemons.length }} / {{ totalCount }} pokemons loaded</h3>
+  
+    <p-virtualScroller [value]="pokemons"
+        scrollHeight="500px"
+        [itemSize]="50"
+        [lazy]="true"
+        (onLazyLoad)="load($event)">
+        <ng-template let-pokemon pTemplate="item">
+          <p-card>
+            {{ pokemon.name }}
+          </p-card>        
+        </ng-template>
+    </p-virtualScroller>
+
+    <p-progressSpinner *ngIf="loading"></p-progressSpinner>
+
+    <p-card *ngIf="error">
+      No pokemon here...
+    </p-card>
+  </div>
