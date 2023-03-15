@@ -3,9 +3,9 @@
 
 <ng-container *ngIf="threeFirstUsersWithPosts$ | async as users; else loading">
     <ng-container *ngIf="users.length">
-        <p-card *ngFor="let user of users; let i=index; trackBy: trackByUser" [header]="user.name">
+        <p-card *ngFor="let user of users; let i=index" [header]="user.name">
             <ul>
-                <li *ngFor="let post of user.posts; let i=index; trackBy: trackByPost">
+                <li *ngFor="let post of user.posts; let i=index">
                     {{ post.title }}
                 </li>
             </ul>
