@@ -7,6 +7,7 @@ import { ConcatMapComponent } from './concat-map/concat-map/concat-map.component
 import { SwitchMapComponent } from './switch-map/switch-map/switch-map.component';
 import { SharedModule } from './shared/shared.module';
 import { ImperativeCodeComponent } from './imperative-code/features/imperative-code/imperative-code.component';
+import { DeclarativeCodeComponent } from './declarative-code/features/declarative-code/declarative-code.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ImperativeCodeComponent } from './imperative-code/features/imperative-c
     SwitchMapComponent,
     ConcatMapComponent,
     ImperativeCodeComponent,
+    DeclarativeCodeComponent,
   ],
   imports: [
     BrowserModule,
