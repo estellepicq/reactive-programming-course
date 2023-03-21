@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { LazyLoadEvent } from 'primeng/api';
-import { BehaviorSubject, catchError, map, of, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, catchError, distinctUntilChanged, map, of, switchMap, tap } from 'rxjs';
 import { PokemonService } from '../data-access/pokemon.service';
-
 @Component({
   selector: 'app-declarative-code',
   templateUrl: './declarative-code.component.html',
@@ -10,19 +9,22 @@ import { PokemonService } from '../data-access/pokemon.service';
 })
 export class DeclarativeCodeComponent {
 
-  public totalItemsLoaded = 0;
-  public isLoading = false;
-  public hasError = false;
   private lazyLoadEvent!: LazyLoadEvent;
 
-  limite$ = new BehaviorSubject(0)
-  pokemonsData$ = this.limite$.pipe(
+  isLoading = false
+  hasError = false
+
+  paginationState$ = new BehaviorSubject({ currentPage: 0, totalItems: 0 });
+  pokemonsData$ = this.paginationState$.pipe(
+    map((paginationState) => paginationState.currentPage * 20),
+     distinctUntilChanged(),
     switchMap((currentLimit) => 
        this.pokemonService.getMany(currentLimit)
     ),
     map(response => ({ results: response.results, totalCount: response.count })),
     tap((res) => {
-      this.totalItemsLoaded = res.results.length
+      const totalItemsLoaded = res.results.length
+      this.paginationState$.next({ ...this.paginationState$.value, totalItems: totalItemsLoaded });
       this.isLoading = false
     }),
     catchError(() => {
@@ -40,11 +42,11 @@ export class DeclarativeCodeComponent {
       return;
     }
   
-    const visibleItems = Math.min(lazyLoadEvent.first! + lazyLoadEvent.rows!, this.totalItemsLoaded);
+    const visibleItems = Math.min(lazyLoadEvent.first! + lazyLoadEvent.rows!, this.paginationState$.value.totalItems);
 
-    if (visibleItems >= this.totalItemsLoaded) {
-      this.limite$.next(this.limite$.value + 20);
-      this.isLoading = true;
+    if (visibleItems >= this.paginationState$.value.totalItems) {
+      this.paginationState$.next({ ...this.paginationState$.value, currentPage: this.paginationState$.value.currentPage + 1 });
+      this.isLoading = true
     }
   
     this.lazyLoadEvent = lazyLoadEvent;
