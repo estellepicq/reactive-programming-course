@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LazyLoadEvent } from 'primeng/api';
 import { BehaviorSubject, catchError, distinctUntilChanged, map, of, switchMap, tap } from 'rxjs';
-import { PokemonService } from '../data-access/pokemon.service';
+import { PokemonService } from 'src/app/shared/data-access/pokemon.service';
 @Component({
   selector: 'app-declarative-code',
   templateUrl: './declarative-code.component.html',

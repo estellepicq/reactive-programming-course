@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LazyLoadEvent } from 'primeng/api';
-import { Pokemon, PokemonService } from 'src/app/declarative-code/features/data-access/pokemon.service';
+import { Pokemon, PokemonService } from 'src/app/shared/data-access/pokemon.service';
 
 @Component({
   selector: 'app-imperative-code',
