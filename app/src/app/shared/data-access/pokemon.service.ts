@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, delay, Observable, of } from 'rxjs';
+import { delay, map, Observable } from 'rxjs';
 
 export interface Pokemon {
   name: string;
@@ -29,7 +29,7 @@ export class PokemonService {
     params = params.append('offset', 0);
     return this.http.get<PaginatedPokemonResponse>(this.pokemonApiUrl, { params }).pipe(
       delay(1000),
-      catchError(() => of({ results: [], count: 0 }))
+       map(() => {throw 'error'}) // Uncomment to see results
     );
   };
 

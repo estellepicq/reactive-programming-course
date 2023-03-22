@@ -1,33 +1,32 @@
 <div class="example-container">
-    <h2>Gotta catch em all</h2>
+  <h2>Gotta catch em all</h2>
 
-    <div *ngIf="pokemonsData$ | async as pokemons; else loadSkeleton">
-  
-        <h3>Currently {{ pokemons.results.length }} / {{ pokemons.totalCount }} pokemons loaded</h3>
-  
-        <p-virtualScroller [value]="pokemons.results"
-        scrollHeight="500px"
-        [itemSize]="50"
-        [lazy]="true"
-        (onLazyLoad)="load($event)">
-        <ng-template let-pokemon pTemplate="item">
-            <p-card>
-                {{ pokemon.name }}
-            </p-card>        
-        </ng-template>
-    </p-virtualScroller>
-</div>
-    
-    <p-progressSpinner *ngIf="isLoading"></p-progressSpinner>
+  <div *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="vm.results">
+            <h3>
+                Currently {{ vm.results.length }} / {{ vm.count }} pokemons loaded
+              </h3>
+          
+              <p-virtualScroller
+                [value]="vm.results"
+                scrollHeight="500px"
+                [itemSize]="50"
+                [lazy]="true"
+                (onLazyLoad)="load($event)"
+              >
+                <ng-template let-pokemon pTemplate="item">
+                  <p-card>
+                    {{ pokemon.name }}
+                  </p-card>
+                </ng-template>
+              </p-virtualScroller>
+        </ng-container>
 
-    <p-card *ngIf="hasError">
-      No pokemon here...
-    </p-card>
+    <p-progressSpinner *ngIf="vm.loading && !vm.err"></p-progressSpinner>
+        
+    <ng-container *ngIf="vm.err">
+        Oops, no pokemon here
+    </ng-container>
   </div>
-
-<ng-template #loadSkeleton>
-    <h3>Currently 0 / 0 pokemons loaded</h3>
-    <p-skeleton height="60px"></p-skeleton>
-    <p-skeleton height="60px"></p-skeleton>
-    <p-skeleton height="60px"></p-skeleton>
-</ng-template>
+  
+</div>
