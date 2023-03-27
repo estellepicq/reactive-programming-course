@@ -3,7 +3,7 @@
 What is reactive programming? It's a programming paradigm that responds to events, such as button clicks, search inputs, and HTTP requests, among others. In JavaScript, every event triggers an action. Reactive programming allows consistent and standardized reactions to each event.
 
 
-- JS Events (imparative)
+- JS Events (imperative)
 
 ```js
 
