@@ -4,6 +4,7 @@ import { ImperativeCodeComponent } from './imperative-code/features/imperative-c
 import { DeclarativeCodeComponent } from './declarative-code/features/declarative-code/declarative-code.component';
 import { ConcatMapComponent } from './concat-map/concat-map/concat-map.component';
 import { SwitchMapComponent } from './switch-map/switch-map/switch-map.component';
+import { ManualSubsComponent } from 'src/app/manual-subs/manual-subs.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path: 'declarative', title:  'Declarative code', component: DeclarativeCodeComponent,
+  },
+  {
+    path: 'manual-subs', title:  'Manual subscriptions?', component: ManualSubsComponent,
   },
   { 
     path: '', component: SwitchMapComponent 
