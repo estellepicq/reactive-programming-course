@@ -5,6 +5,7 @@ import { DeclarativeCodeComponent } from './declarative-code/features/declarativ
 import { ConcatMapComponent } from './concat-map/concat-map/concat-map.component';
 import { SwitchMapComponent } from './switch-map/switch-map/switch-map.component';
 import { ManualSubsComponent } from 'src/app/manual-subs/manual-subs.component';
+import { SignalsComponent } from 'src/app/signals/signals.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'manual-subs', title:  'Manual subscriptions?', component: ManualSubsComponent,
+  },
+  {
+    path: 'signals', title:  'Signals', component: SignalsComponent,
   },
   { 
     path: '', component: SwitchMapComponent 

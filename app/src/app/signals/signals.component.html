@@ -1,0 +1,9 @@
+<input pInputText type="text" placeholder="Search..." (input)="search($event)">
+
+<ul>
+    <li *ngFor="let pokemon of filteredPokemons()">
+        {{ pokemon }}
+    </li>
+</ul>
+
+<button pButton (click)="add()">Add pokemon</button>
