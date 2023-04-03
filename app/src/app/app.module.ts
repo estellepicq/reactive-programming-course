@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { ImperativeCodeComponent } from './imperative-code/features/imperative-code/imperative-code.component';
 import { DeclarativeCodeComponent } from './declarative-code/features/declarative-code/declarative-code.component';
 import { ManualSubsComponent } from './manual-subs/manual-subs.component';
+import { SignalsComponent } from './signals/signals.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ManualSubsComponent } from './manual-subs/manual-subs.component';
     ImperativeCodeComponent,
     DeclarativeCodeComponent,
     ManualSubsComponent,
+    SignalsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,5 @@
-<div class="navbar">
-  <button pButton routerLink="/" class="p-button-link">Reactive programming course</button>
-  <button pButton routerLink="/imperative">Imperative code</button>
-  <button pButton routerLink="/declarative">Declarative code</button>
-  <button pButton routerLink="/switchMap">switchMap</button>
-  <button pButton routerLink="/concatMap">concatMap</button>
-  <button pButton routerLink="/manual-subs">Manual subscriptions?</button>
-</div>
-<router-outlet></router-outlet>
+<p-menubar [model]="menu"></p-menubar>
+
+<p-card class="main-content">
+  <router-outlet></router-outlet>
+</p-card>

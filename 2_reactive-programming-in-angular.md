@@ -1,0 +1,1 @@
+![Angular reactive programming](./assets/angular_rxjs_meme.jpeg "Angular reactive programming")

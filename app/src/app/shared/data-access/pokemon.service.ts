@@ -29,7 +29,7 @@ export class PokemonService {
     params = params.append('offset', 0);
     return this.http.get<PaginatedPokemonResponse>(this.pokemonApiUrl, { params }).pipe(
       delay(1000),
-       map(() => {throw 'error'}) // Uncomment to see results
+      // map(() => {throw 'error'}) // Uncomment to see results
     );
   };
 

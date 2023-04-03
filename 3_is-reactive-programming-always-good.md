@@ -14,7 +14,7 @@ this.nameControl.valueChanges.subscribe((value: string) => {
 
 But can we do otherwise? Is it even a good idea to try to avoid that?
 
-=> Let's see alternatives in the showcase app (ManualSubsComponent)
+=> Let's see alternatives in the showcase app ([ManualSubsComponent](/app/src/app/manual-subs/manual-subs.component.ts))
 
 - 1st alternative: use the async pipe in the template
 - 2d alternative: let something else subscribe, for example ngrx component store effect
