@@ -1,35 +1,34 @@
 ## What is reactive programming
 
-What is reactive programming? It's a programming paradigm that responds to events, such as button clicks, search inputs, and HTTP requests, among others. In JavaScript, every event triggers an action. Reactive programming allows consistent and standardized reactions to each event.
+What is reactive programming?
 
+It is a programming paradigm concerned with data streams and the propagation of change.
 
-- JS Events (imperative)
+It is about describing what we have, as opposed to tell the program how we want it to behave.
+
+Let's take the following examples to have a better understanding of this concept:
+
+1. Imperative approach
 
 ```js
-
-button.addEventListner('click', reaction)
-
-fetch('http://nutrimetrics.api.com').then(reaction)
-
-setInterval(reaction, 1000)
-
+class ImperativeClass {
+    transform() {
+        const numbers = [1, 2, 3];
+        for (let i = 0; i < numbers.length; i++) {
+            numbers[i] = numbers[i] + 1;
+        }
+        return numbers;
+    }
+}
 ```
 
-- Observable (declarative)
+2. Declarative approach
 
 ```js
-import { fromEvent } from "rxjs";
-import { ajax } from "rxjs";
-import { interval } from "rxjs";
-
-const button = document.querySelector("button");
-
-const buttonClick$ = fromEvent(button, "click");
-const nutrimetrics$ = ajax.getJSON("http://nutrimetrics.api.com");
-const interval$ = interval(1000);
-
-buttonClick$.subscribe(reaction);
-nutrimetrics$.subscribe(reaction);
-interval$.subscribe(reaction);
-
+class ReactiveClass {
+    transform() {
+        const numbers = [1, 2, 3];
+        return numbers.map(number => number + 1);
+    }
+}
 ```

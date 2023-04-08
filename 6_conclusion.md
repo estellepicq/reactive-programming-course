@@ -1,11 +1,18 @@
 ## Conclusion
 
-Don't think Rxjs is over complicated, it gives you the tools necessary to deal with complex issues in applications.
+The declarative approach allows you to describe what you want to accomplish rather than how you want to do it, which can make the code easier to read and maintain in the long term. This can be particularly useful for complex applications with many user interactions.
 
-RxJS can seem complicated. However, this does not mean that you absolutely have to develop in a declarative manner or use RxJS. It is perfectly possible to develop applications using an imperative approach.
+Don't think RxJS is over complicated, it gives you the tools necessary to deal with complex issues in applications.
 
-The imperative approach consists of describing step by step what the program should do to achieve a specific goal. This is a very common approach in web development and has been used for years.
+However if it is too complicated for you, you can stick to an imperative approach, as the main goal we are trying to achieve here is to write maintainable and bug free applications. 
 
-If you want to code declaratively then you are going to need rxjs or you are going to need something else that does the same things that rxjs. The declarative approach allows you to describe what you want to accomplish rather than how you want to do it, which can make the code easier to read and maintain in the long term. This can be particularly useful for complex applications with many user interactions.
+You have to choose the more comfortable approach that gives you power to ensure everything's work as expected.
 
 Ultimately, there is no good or bad code, there are simply different approaches that may be suitable for different needs. As a developer, you should choose the approach that best suits your situation and personal preferences.
+
+## Additional resources
+
+- [Learn RxJS](https://www.learnrxjs.io/)
+- [Joshua Morony Youtube Channel](https://www.youtube.com/watch?v=mI8kH1_mEtw&list=PLvLBrJpVwC7oDMei6JYcySgH1hMBZti_a)
+- [Reactive Programming Pros and Cons](https://goodguydaniel.com/blog/reactive-rxjs-pros-cons)
+- [Signals](https://dev.to/this-is-angular/i-changed-my-mind-angular-needs-a-reactive-primitive-n2g)
